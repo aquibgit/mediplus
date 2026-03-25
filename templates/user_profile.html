@@ -1,0 +1,25 @@
+{% load static %}
+{% include 'header.html' %}	
+
+<div class="container d-flex justify-content-center mt-5">
+
+	<div class="card">
+		
+		<div class="top-container">
+			
+			<img src="../media/{{result.photo}}" class="img-fluid profile-image" >
+			
+		</div>
+
+		<br>
+			<h5 class="name">Name: {{result.name}}</h5>
+		<br>
+		
+			<p class="name">Email: {{result.email}}</p>
+	
+	</div>
+	
+</div>
+<br>
+<br>
+{% include 'footer.html' %}

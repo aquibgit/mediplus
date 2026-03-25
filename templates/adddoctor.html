@@ -1,0 +1,84 @@
+{% load static %}
+
+	{% include 'header.html' %}	
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    
+           {% if messages %}
+              <div class="alert alert-light" role="alert">
+                <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+              </div>
+      {% endif %}
+
+<center>
+    <div class="text">
+	<h1>REGISTER DOCTOR</h1>
+	<!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sed nisl pellentesque, faucibus libero eu, gravida quam. </p> -->
+</div> 
+</center>
+    
+
+<section class="appointment">
+			<center>
+        <div class="container">
+                    <form class="form" action="registerdoctor" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                     <!-- #csrf token for security -->
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 ">
+                            <div class="form-group">
+                                <input id="doctorphoto" name="doctorphoto" type="file" placeholder="Doctor Photo">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 ">
+                            <div class="form-group">
+                                <input id="doctorname" name="doctorname" type="text" placeholder="Doctor Name">
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-md-12 ">
+									<div class="form-group">
+										<input id="doctoremail" name="doctoremail" type="email" placeholder="Doctor Email">
+									</div>
+								</div>
+								<div class="col-lg-12 col-md-12 ">
+									<div class="form-group">
+										<input id="doctorphone" name="doctorphone" type="text" placeholder="Doctor Phone">
+									</div>
+								</div>
+                        <div class="col-lg-12 col-md-12 ">
+									<div class="form-group">
+										<input id="doctorpayment" name="doctorpayment" type="text" placeholder="Doctor Payment">
+									</div>
+								</div>
+                                <div class="col-lg-12 col-md-12 ">
+									<div class="form-group">
+										<input id="doctorhours" name="doctorhours" type="text" placeholder="Doctor timing">
+									</div>
+								</div>
+                                <div class="col-lg-12 col-md-12 ">
+									<div class="form-group">
+										<input id="doctorspecialisation" name="doctorspecialisation" type="text" placeholder="Doctor Specialisation">
+									</div>
+								</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 ">
+                            <div class="form-group">
+                                <div class="button">
+                                    <button id="submitbttn" type="submit" class="btn">REGISTER DOCTOR</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    </form>				
+				</div>
+            </center>
+		<!-- End Appointment -->
+							
+
+    {% include 'footer.html' %}	
+
+    {% include 'footer.html' %}
